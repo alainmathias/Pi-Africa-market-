@@ -112,7 +112,7 @@
 
         <!-- Texte Animé -->
         <div class="text-center space-y-4 opacity-0 animate-fade-in [animation-delay:1s]">
-            <h1 class="text-4xl font-bold mb-2">piafrica.market</h1>
+            <h1 class="text-4xl font-bold mb-2">Pi Africa Market</h1>
             <p class="text-xl flex items-center justify-center gap-2">
                 <span>Chargement</span>
                 <i class="fas fa-spinner fa-pulse"></i>
@@ -161,111 +161,4 @@
         });
     </script>
 </body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PiAfrica Market</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes wave {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .gradient-wave {
-            background: linear-gradient(-45deg, #2C3E50, #E67E22, #27AE60, #2980B9);
-            background-size: 400% 400%;
-            animation: wave 8s ease infinite;
-        }
-
-        .progress-bar {
-            width: 0;
-            transition: width 2s ease-in-out;
-        }
-    </style>
-</head>
-<body>
-    <!-- Splash Screen -->
-    <div class="fixed inset-0 z-50 gradient-wave flex flex-col items-center justify-center space-y-8 text-white">
-        <!-- Logo Animé -->
-        <div class="floating">
-            <div class="flex items-center justify-center relative">
-                <!-- Cercle Extérieur -->
-                <div class="absolute w-32 h-32 border-4 border-white rounded-full animate-pulse"></div>
-                
-                <!-- Pi Symbol -->
-                <div class="text-6xl font-bold relative z-10">
-                    π
-                    <div class="absolute -right-6 -top-4">
-                        <i class="fas fa-leaf text-3xl text-green-400"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Texte Animé -->
-        <div class="text-center space-y-4 opacity-0 animate-fade-in [animation-delay:1s]">
-            <h1 class="text-4xl font-bold mb-2">piafrica.market</h1>
-            <p class="text-xl flex items-center justify-center gap-2">
-                <span>Chargement</span>
-                <i class="fas fa-spinner fa-pulse"></i>
-            </p>
-        </div>
-
-        <!-- Barre de Progrès -->
-        <div class="w-64 h-2 bg-white/20 rounded-full overflow-hidden">
-            <div class="progress-bar h-full bg-gradient-to-r from-[#27AE60] to-[#2980B9]"></div>
-        </div>
-
-        <!-- Motifs Africains Subtils -->
-        <div class="absolute bottom-8 opacity-20">
-            <svg viewBox="0 0 100 20" class="w-64">
-                <path fill="none" stroke="currentColor" stroke-width="1.5" 
-                      d="M 0,10 Q 25,15 50,10 T 100,10" />
-            </svg>
-        </div>
-    </div>
-
-    <!-- Contenu Principal (caché initialement) -->
-    <div class="opacity-0">
-        <!-- Votre contenu ici -->
-    </div>
-
-    <script>
-        // Simulation de chargement
-        document.addEventListener('DOMContentLoaded', () => {
-            const progressBar = document.querySelector('.progress-bar');
-            const splashScreen = document.querySelector('.gradient-wave');
-
-            // Animation de la barre de progression
-            progressBar.style.width = '100%';
-
-            // Redirection après 3s
-            setTimeout(() => {
-                splashScreen.style.opacity = '0';
-                splashScreen.style.transition = 'opacity 0.5s ease';
-                
-                setTimeout(() => {
-                    splashScreen.remove();
-                    document.body.classList.remove('overflow-hidden');
-                    document.querySelector('.content').classList.remove('opacity-0');
-                }, 500);
-            }, 3000);
-        });
-    </script>
-</body>
-</html>
+</html>        
